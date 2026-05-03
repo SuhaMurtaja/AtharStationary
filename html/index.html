@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>مكتبة أثر</title>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="../css/prodcut.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/category.css">
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img class="logo-png" src="../pics/logo.png" alt="شعار أثر" />
+    <div>
+      <span class="logo-text">مكتبة <span>أثر</span></span>
+      <span class="logo-sub">ATHAR STATIONERY</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#products">منتجاتنا</a></li>
+    <li><a href="#categories">الأقسام</a></li>
+    <li><a href="#about">عنّا</a></li>
+    <li><a href="cart.html">السلة</a></li>
+    <li><a href="../html/contact_us.html" class="nav-btn">تواصل معنا</a></li>
+  </ul>
+
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="القائمة">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="#products" onclick="closeMenu()">منتجاتنا</a>
+    <a href="#categories" onclick="closeMenu()">الأقسام</a>
+    <a href="#about" onclick="closeMenu()">عنّا</a>
+    <a href="cart.html" onclick="closeMenu()">السلة</a>
+    <a href="../html/contact_us.html" class="nav-btn" onclick="closeMenu()">تواصل معنا</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-shapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+  </div>
+
+  <div class="hero-left">
+    <p class="hero-tag">قرطاسية افتراضية — مصنوعة لك</p>
+    <h1 class="hero-title">
+      مكانك الذي<br/>تبدأ فيه<br/><span class="atherk">أثرك</span>
+    </h1>
+    <p class="tagline">
+      من دفتر ملاحظاتك إلى أصغر أقلامك — أثر هو المكان الذي تجد فيه الأدوات التي تحمل روحك وتعبّر عن شخصيتك.
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-right">تصفّح المنتجات</a>
+      <a href="#about" class="btn-more">اعرف أكثر</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-video-sec">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="../pics/vid_library_hero.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products-section">
+  <div class="section-inner">
+    <div class="products-header reveal">
+      <div>
+        <span class="s-tag">اختيارات أثر</span>
+        <h2 class="s-title">منتجاتنا المميزة</h2>
+      </div>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="prod-card reveal">
+        <div class="prod-img prod-bg-1">
+          <img src="../pics/big_note.png" alt="دفتر أثر" class="prod-image" width="300">
+          <!-- <div class="star">جديد</div> -->
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">دفتر رسم أثر المميز</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٤٥ ₪</span>
+          <button class="prod-add"
+            data-id="1"
+            data-name="دفتر رسم أثر المميز"
+            data-price="٤٥ ₪"
+            data-pic="../pics/big-note.jpeg">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.08s">
+        <div class="prod-img prod-bg-2">
+          <img src="../pics/pen.jpeg" alt="قلم أثر المميز" class="prod-image">
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">قلم أثر المميز</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٣٨ ₪</span>
+          <button class="prod-add"
+            data-id="2"
+            data-name="قلم أثر المميز"
+            data-price="٣٨ ₪"
+            data-pic="../pics/pen.jpeg">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.16s">
+        <div class="prod-img prod-bg-3">
+          <img src="../pics/small note.jpeg" alt="منظم المهام الأسبوعي لأثر" class="prod-image">
+          <!-- <div class="star">الأكثر مبيعًا</div> -->
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">منظّم المهام الأسبوعي لأثر</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٦٠ ₪</span>
+          <button class="prod-add"
+            data-id="3"
+            data-name="منظّم المهام الأسبوعي لأثر"
+            data-price="٦٠ ₪"
+            data-pic="../pics/small note.jpeg">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.24s">
+        <div class="prod-img prod-bg-4">
+          <img src="../pics/taqweem.jpeg" alt="تقويم أثر" class="prod-image">
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">تقويم أثر الصغير</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٢٥ ₪</span>
+          <button class="prod-add"
+            data-id="4"
+            data-name="تقويم أثر الصغير"
+            data-price="٢٥ ₪"
+            data-pic="../pics/taqweem.jpeg">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.24s">
+        <div class="prod-img prod-bg-5">
+          <img src="../pics/clock.jpeg" alt="ساعة أثر" class="prod-image">
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">ساعة أثر</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٢٥ ₪</span>
+          <button class="prod-add"
+            data-id="5"
+            data-name="ساعة أثر"
+            data-price="٢٥ ₪"
+            data-pic="../pics/clock.jpeg">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.24s">
+        <div class="prod-img prod-bg-6">
+          <img src="../pics/mug.png" alt="مج أثر" class="prod-image">
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">مج أثر المميز</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٢٥ ₪</span>
+          <button class="prod-add"
+            data-id="6"
+            data-name="مج أثر المميز"
+            data-price="٢٥ ₪"
+            data-pic="../pics/mug.png">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.24s">
+        <div class="prod-img prod-bg-7">
+          <img src="../pics/mid.jpeg" alt="ميدالية أثر" class="prod-image">
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">ميدالية أثر</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٢٥ ₪</span>
+          <button class="prod-add"
+            data-id="7"
+            data-name="ميدالية أثر"
+            data-price="٢٥ ₪"
+            data-pic="../pics/mid.jpeg">+</button>
+        </div>
+      </div>
+
+      <div class="prod-card reveal" style="transition-delay:.24s; border-radius:5%;">
+        <div class="prod-img prod-bg-7">
+          <img src="../pics/bag.jpeg" alt="حقيبة أثر المميزة" class="prod-image">
+        </div>
+        <div class="prod-info">
+          <div class="prod-name">حقيبة أثر المميزة</div>
+        </div>
+        <div class="prod-footer">
+          <span class="prod-price">٢٥ ₪</span>
+          <button class="prod-add"
+            data-id="8"
+            data-name="حقيبة أثر المميزة"
+            data-price="٢٥ ₪"
+            data-pic="../pics/bag.jpeg">+</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT PAGE -->
+<div id="product-page">
+  <nav class="pp-nav">
+    <button class="pp-back" onclick="closePage()">
+      <span class="pp-back-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      العودة للمتجر
+    </button>
+
+    <div class="pp-cart-bar">
+      <span class="pp-cart-count">السلة: <span id="cart-count">٠</span> منتج</span>
+    </div>
+  </nav>
+
+  <div class="pp-body" id="pp-body"></div>
+
+  <div class="pp-related">
+    <div class="pp-related-inner">
+      <div class="pp-related-title">منتجات قد تعجبك</div>
+      <div class="pp-related-grid" id="pp-related-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast مرة واحدة فقط -->
+<div class="cart-toast" id="cart-toast"> تمت الإضافة للسلة!</div>
+
+<!-- CATEGORIES -->
+<section id="categories" class="cats-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="s-tag">استكشف</span>
+      <h2 class="s-title">أقسام المتجر</h2>
+      <p class="s-desc">كل قسم مصمّم ليخدم غاية إبداعية مختلفة</p>
+    </div>
+
+    <div class="cats-grid">
+      <div class="cat-card reveal" onclick="window.location.href='secs.html?cat=notebooks'">
+        <div class="cat-name">الدفاتر والمفكرات</div>
+        <div class="cat-desc">دفاتر مسطّرة، فارغة، ودوّامية لكل أسلوب كتابة</div>
+      </div>
+
+      <div class="cat-card reveal" style="transition-delay:.09s" onclick="window.location.href='secs.html?cat=pens'">
+        <div class="cat-name">الأقلام والألوان</div>
+        <div class="cat-desc">جرافات، ماركرات، ألوان خشبية وفنية احترافية</div>
+      </div>
+
+      <div class="cat-card reveal" style="transition-delay:.18s" onclick="window.location.href='secs.html?cat=planning'">
+        <div class="cat-name">التنظيم والتخطيط</div>
+        <div class="cat-desc">منظمات يومية، أسبوعية، وأدوات إدارة الوقت</div>
+      </div>
+
+      <div class="cat-card reveal" style="transition-delay:.09s" onclick="window.location.href='secs.html?cat=art'">
+        <div class="cat-name">أدوات الفنون</div>
+        <div class="cat-desc">فراشي، ألوان مائية، لوازم الرسم والتصميم</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-pattern-box">
+          <img 
+            src="../pics/pettern.jpg"
+            alt="Pattern Image"
+            class="about-main-image"
+          >
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="s-tag" style="font-size: 20px">مـن نـحـن ؟</span>
+
+        <p class="about-text">
+          أثر ليست مجرد قرطاسية — هي تجربة بصرية تفاعلية تولد لحظة تلمس القلم الورقة.
+          كل منتج مصمّم ليكون امتدادًا لشخصيتك وأداةً لتجسيد أفكارك.
+        </p>
+
+        <p class="about-text">
+          مكتبة أثر تعكس روح الإبداع من خلال ألوان عميقة تحمل معنى،
+          وأنماط هندسية تتشكّل وتتكيّف، وخط عربي يجمع بين الأصالة والمعاصرة.
+        </p>
+
+        <div class="about-values">
+          <div class="value-row">
+            <div class="value-dot vd-y"></div>
+            الإبداع كتجربة لا كمنتج
+          </div>
+
+          <div class="value-row">
+            <div class="value-dot vd-m"></div>
+           تجربة استخدام سهلة وحديثة
+          </div>
+
+          <div class="value-row">
+            <div class="value-dot vd-p"></div>
+          عرض تفاعلي للمنتجات (3D)
+          </div>
+        </div>
+
+        <a href="../html/contact_us.html" class="btn-y">تواصل معنا</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-mini">
+  <div class="footer-mini-inner">
+    <span class="footer-mini-left">
+      ATHAR STATIONERY مصنوع بإبداع
+    </span>
+
+    <span class="footer-mini-right">
+      © ٢٠٢٦ مكتبة أثر — جميع الحقوق محفوظة
+    </span>
+  </div>
+</footer>
+
+<script src="../js/category.js"></script>
+<script src="../js/prodcut.js"></script>
+<script src="../js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,716 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --purple-deep: #29164b;
+  --purple-mid: #614fa1;
+  --magenta: #81398d;
+  --yellow: #f2d242;
+  --off-white: #fefdec;
+  --white: #ffffff;
+  --purple-pale: #c5b8e8;
+  --purple-dark2: #1d0f35;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--off-white);
+  color: var(--purple-deep);
+  overflow-x: hidden;
+}
+
+/* الصفحة */
+#product-page {
+  min-height: 100vh;
+  background: var(--off-white);
+  display: block;
+}
+
+/* الشريط العلوي */
+.pp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 72px;
+  background: rgba(41, 22, 75, 0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+
+.pp-back {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--off-white);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Cairo', sans-serif;
+  opacity: 0.85;
+  transition: 0.25s;
+  letter-spacing: 0.04em;
+}
+
+.pp-back:hover {
+  opacity: 1;
+}
+
+.pp-back-arrow {
+  font-size: 1.1rem;
+  color: var(--yellow);
+}
+
+.pp-cart-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pp-cart-count {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--purple-pale);
+  letter-spacing: 0.05em;
+}
+
+.pp-cart-count span {
+  color: var(--yellow);
+}
+
+/* جسم الصفحة */
+.pp-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  direction: ltr;
+}
+
+.pp-gallery,
+.pp-info {
+  min-width: 0;
+  direction: rtl;
+}
+
+.pp-info {
+  order: 1;
+  padding-top: 1rem;
+}
+
+.pp-gallery {
+  order: 2;
+}
+
+/* أزرار التبديل */
+.pp-view-tabs {
+display: flex;
+  justify-content: flex-end;
+  gap: 0;
+  margin-bottom: 1rem;
+  border: 1.5px solid rgba(97, 79, 161, 0.15);
+  width: fit-content;
+  margin-right: 0;
+  margin-left: auto;
+  overflow: hidden;
+  
+}
+
+.pp-view-tab {
+  
+  padding: 0.55rem 1.25rem;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: rgba(41, 22, 75, 0.45);
+  transition: 0.25s;
+  
+  
+}
+
+.pp-view-tab.active {
+  background: var(--purple-deep);
+  color: var(--yellow);
+}
+
+.pp-view-tab:hover:not(.active) {
+  background: rgba(97, 79, 161, 0.08);
+}
+
+/* 3D الرئيسي */
+#pp-3d-view {
+  display: block;
+}
+
+.pp-model-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  margin-bottom: 1rem;
+  background: var(--purple-deep);
+  overflow: hidden;
+  border: 1px solid rgba(97, 79, 161, 0.14);
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  --poster-color: transparent;
+}
+
+.pp-model-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(242, 210, 66, 0.08) 0, transparent 18%),
+    radial-gradient(circle at 85% 80%, rgba(129, 57, 141, 0.08) 0, transparent 20%);
+}
+
+/* Placeholder */
+.pp-model-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pp-model-placeholder.hidden {
+  display: none;
+}
+
+.placeholder-icon {
+  font-size: 4.5rem;
+  animation: floatIcon 4s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+.placeholder-ring {
+  position: absolute;
+  inset: 20%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(242, 210, 66, 0.25);
+  animation: spinRing 18s linear infinite;
+}
+
+.placeholder-ring-2 {
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  border: 1px dashed rgba(129, 57, 141, 0.3);
+  animation: spinRing 12s linear infinite reverse;
+}
+
+@keyframes spinRing {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.placeholder-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(242, 210, 66, 0.55);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.placeholder-glb-hint {
+  background: rgba(242, 210, 66, 0.08);
+  border: 1px dashed rgba(242, 210, 66, 0.2);
+  padding: 0.4rem 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(242, 210, 66, 0.45);
+}
+
+.pp-3d-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.74rem;
+  color: rgba(97, 79, 161, 0.7);
+  letter-spacing: 0.04em;
+  min-height: 24px;
+}
+
+/* العرض المسطح */
+#pp-flat-view {
+  display: none;
+  width: 100%;
+}
+
+.pp-flat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.pp-flat-model-card,
+.pp-flat-image-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--purple-deep);
+  border: 1px solid rgba(97, 79, 161, 0.14);
+  overflow: hidden;
+  object-fit: cover; 
+}
+
+.pp-flat-model-card model-viewer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+}
+
+.pp-flat-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-fit: cover; 
+}
+
+/* معلومات المنتج */
+.pp-breadcrumb {
+  font-size: 0.74rem;
+  color: rgba(41, 22, 75, 0.45);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pp-breadcrumb span {
+  color: var(--magenta);
+  font-weight: 700;
+}
+
+.pp-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.pp-badge {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.8rem;
+}
+
+.pp-badge-new {
+  background: var(--yellow);
+  color: var(--purple-deep);
+}
+
+.pp-badge-cat {
+  background: rgba(97, 79, 161, 0.12);
+  color: var(--purple-mid);
+}
+
+.pp-name {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--purple-deep);
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.pp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 1.2rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pp-price {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--magenta);
+}
+
+.pp-price-note {
+  font-size: 0.84rem;
+  color: rgba(41, 22, 75, 0.45);
+}
+
+.pp-desc {
+  font-size: 1rem;
+  color: rgba(41, 22, 75, 0.72);
+  line-height: 2;
+  margin-bottom: 2rem;
+  border-right: 3px solid var(--yellow);
+  padding-right: 1.2rem;
+}
+
+.pp-specs {
+  margin-bottom: 2rem;
+}
+
+.pp-specs-title {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--purple-mid);
+  margin-bottom: 1rem;
+}
+
+.pp-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(97, 79, 161, 0.12);
+  font-size: 0.92rem;
+  gap: 1rem;
+}
+
+.pp-spec-key {
+  color: rgba(41, 22, 75, 0.52);
+  font-weight: 600;
+}
+
+.pp-spec-val {
+  color: var(--purple-deep);
+  font-weight: 700;
+}
+
+/* الكمية */
+.pp-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pp-qty-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(41, 22, 75, 0.5);
+}
+
+.pp-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid rgba(97, 79, 161, 0.2);
+  overflow: hidden;
+}
+
+.pp-qty-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: transparent;
+  font-size: 1.15rem;
+  cursor: pointer;
+  color: var(--purple-deep);
+  font-family: 'Cairo', sans-serif;
+  transition: 0.2s;
+}
+
+.pp-qty-btn:hover {
+  background: var(--yellow);
+}
+
+.pp-qty-num {
+  width: 48px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple-deep);
+}
+
+/* زر الإضافة للسلة */
+.pp-add-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: var(--purple-deep);
+  color: var(--yellow);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: 0.3s;
+  margin-bottom: 0.8rem;
+}
+
+.pp-add-btn:hover {
+  background: var(--magenta);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.pp-add-btn.added {
+  background: var(--yellow);
+  color: var(--purple-deep);
+}
+
+/* المنتجات المقترحة */
+.pp-related {
+  background: var(--purple-deep);
+  padding: 4rem 3rem;
+}
+
+.pp-related-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pp-related-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 2rem;
+  color: var(--off-white);
+  margin-bottom: 2rem;
+}
+
+.pp-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.pp-rel-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(97, 79, 161, 0.35);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 120px;
+}
+
+.pp-rel-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--yellow);
+}
+
+.pp-rel-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.35rem;
+  flex-shrink: 0;
+}
+
+.pp-rel-name {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.05rem;
+  color: var(--off-white);
+  margin-bottom: 0.25rem;
+}
+
+.pp-rel-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+/* رسالة السلة */
+.cart-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--purple-deep);
+  color: var(--yellow);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.9rem 2rem;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--yellow);
+  z-index: 999;
+  transition: transform 0.4s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.cart-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* تجاوب */
+@media (max-width: 900px) {
+  .pp-body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem 4rem;
+    direction: rtl;
+  }
+
+  .pp-info,
+  .pp-gallery {
+    order: unset;
+  }
+
+  .pp-info {
+    padding-top: 0;
+  }
+
+  .pp-nav {
+    padding: 0 1.5rem;
+  }
+
+  .pp-related {
+    padding: 3rem 1.5rem;
+  }
+
+  .pp-related-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pp-model-wrap,
+  .pp-flat-model-card,
+  .pp-flat-image-card {
+    max-width: 500px;
+    margin: 0 auto 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-body {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .pp-model-wrap,
+  .pp-flat-model-card,
+  .pp-flat-image-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pp-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-view-tabs {
+    width: 100%;
+  }
+
+  .pp-view-tab {
+    flex: 1;
+    text-align: center;
+  }
+
+  .pp-name {
+    font-size: 1.9rem;
+  }
+
+  .pp-price {
+    font-size: 1.8rem;
+  }
+
+  .pp-nav {
+    padding: 0 1rem;
+  }
+
+  .pp-back {
+    font-size: 0.82rem;
+  }
+
+  .pp-related-title {
+    font-size: 1.5rem;
+  }
+
+  .pp-3d-hint {
+    font-size: 0.68rem;
+  }
+
+  .pp-cart-count {
+    font-size: 0.72rem;
+  }
+
+  .pp-rel-card {
+    min-height: auto;
+  }
+
+  .pp-rel-img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+
+.pp-flat-model-card,
+.pp-flat-image-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--purple-deep);
+  border: 1px solid rgba(97, 79, 161, 0.14);
+  overflow: hidden;
+  position: relative;
+}
+
+.pp-flat-model-card .pp-model-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(242, 210, 66, 0.08) 0, transparent 18%),
+    radial-gradient(circle at 85% 80%, rgba(129, 57, 141, 0.08) 0, transparent 20%);
+}
+
+.pp-flat-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  z-index: 2;
+  pointer-events: none;
+}

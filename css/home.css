@@ -1,0 +1,827 @@
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* which cخlore do you want to use ? */
+/*العنصر الأساسي  يعني هادي الألوان يلي بدي اياها  */
+:root{
+  --purple-deep: #29164b;
+  --purple-mid:  #614fa1;
+  --purple-soft: #614FA1;
+  --magenta:     #81398d;
+  --yellow:      #f2d242;
+  --off-white:   #fefdec;
+  --white:       #ffffff;
+  --purple-dark2:#1d0f35;
+}
+
+/* KEY FRAMES */
+@keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-10px,-20px) rotate(15deg)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(8px,15px) rotate(-12deg)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+
+
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--off-white);
+  color:var(--purple-deep);
+  /* اخفي العناصر يلي برة البدي وهيك ببطل في عناصر برا البدي بحصرهم */
+  overflow-x:hidden;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* القائمة العلوية */
+nav{
+    /* تثبيت الناف */
+  position:fixed;top:0;left:0;right:0;
+  /* ينحط فوق العناصر كلهم */
+  z-index:200;
+ /* ترتيب العناصر جنب بعضها */
+  display:flex;
+  align-items:center;justify-content:space-between;
+  padding:0 48px;
+  height:72px;
+  /* خصائص الناف */
+  background:var(--purple-deep);
+  
+  border-bottom:2px solid var(--yellow);
+}
+
+/* لوجو القائمة */
+.nav-logo{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;
+}
+
+/*png logo */
+.logo-png{width:30px;height:38px;flex-shrink:0}
+
+/* مكتبة أثر*/
+.logo-text{
+  font-family:'Aref Ruqaa',serif;
+  font-size:24px;color:var(--off-white);
+  letter-spacing:0.6px;line-height:1;
+}
+
+/* أثر */
+.logo-text span{color:var(--yellow)}
+
+/* ATHAR STATIONERY */
+.logo-sub{
+  font-size:8px;color:var(--off-white);
+  letter-spacing:3px;display:block;margin-top:1px;
+}
+
+/* روابط القائمة */
+.nav-links{list-style:none;
+    display:flex;
+     
+     margin-right: auto;
+     /* المسافة بين الحروف */
+     gap:32px}
+
+
+/* hover underline animation */
+
+/* خصائص الروابط */
+.nav-links a{
+  font-size:14px;font-weight:600;
+  color:var(--off-white);
+  text-decoration:none;
+  letter-spacing:0.5px;
+  transition:color .2s;
+  /* ضرورية عشان يصير الانيمشن كانه حاوية للأنيمشن */
+  position:relative;
+}
+
+/* الخط يلي بصير تحت الروابط */
+.nav-links a::after{
+  /* ضروري عشان يعمل شكل مش موجود */
+  content:'';
+  /* متعلقة بالريلاتيف عشان تتحرك بحرية بالحاوية */
+  position:absolute;
+  bottom:-4px;right:0;
+  width:0;height:2px;background:var(--yellow);
+  transition:width .3s;
+}
+.nav-links a:hover{color:var(--yellow)}
+.nav-links a:hover::after{width:100%}
+
+/* زر تواصل معنا */
+.nav-btn:hover{
+    background:var(--magenta);
+    color:var(--white)
+}
+
+/* لما يجي الماوس على الزر */
+.nav-btn{
+  background:var(--yellow);
+  padding:5px 14px;
+  border-radius:2px;
+  transition:background .3s ;
+}
+.nav-btn::after{display:none}
+.nav-hamburger{display:none;}
+
+
+/* خيارات قائمة الهامبرغر للموبايل */
+.nav-hamburger{
+  display:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  flex-direction:column;
+  gap:4px;
+}
+
+/* كيف شكل الهامبرغر راح يطلع قبل الضغط*/
+.nav-hamburger span{
+  width:24px;
+  height:2px;
+  background:var(--off-white);
+  /* ينزل سطر ويكون تحته  ياخد شكل بلوك */
+  display:block;
+  transition:.3s;
+}
+
+/*   شكل الهامبرغر نفسه عند الضغط*/
+.nav-hamburger.open span:nth-child(1){
+  width:32px; /* يتمدد */
+}
+
+.nav-hamburger.open span:nth-child(2){
+  width:12px; /* يقصر */
+}
+
+.nav-hamburger.open span:nth-child(3){
+  width:12px; /* تقصير بسيط */
+}
+
+
+/* قائمة الموبايل قبل ما تصير الويب زي ويب الموبايل*/
+.nav-mobile-menu{
+  position:fixed;
+  top:72px;
+  left:0;
+  right:0;
+  background:var(--purple-dark2);
+  backdrop-filter:blur(16px);
+  border-bottom:2px solid var(--yellow);
+  padding:24px 32px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+
+  transform:translateY(-8px);
+  opacity:0;
+  pointer-events:none;
+  visibility:hidden;
+
+  transition:all .3s ease;
+}
+
+
+/*  لما تفتح من الموبايل*/
+.nav-mobile-menu.open{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+  visibility:visible;
+}
+
+.nav-mobile-menu a{
+  color:var(--off-white);
+  text-decoration:none;
+  font-size:18px;
+}
+
+@media (max-width:768px){
+  /* شو يعمل بالروابط */
+  .nav-links{
+    display:none;
+  }
+  /* يظهر البرغر */
+  .nav-hamburger{
+    display:flex;
+  }
+}
+
+/* هادا بخفي الروابط وبخلي مكانهم برغر لما تكون موبايل او حجم الشاشة كذا بس ما بتشتغل القائمة */
+
+.hero{
+  /* النتيجة النهائية الهيرو يغطي الشاشة بالكامل لعينين المستخدم */
+  min-height:100vh;
+  background:var(--purple-deep);
+  /* قالب للعناصر (مرجع للعناصر) */
+  position:relative;
+  /* تقسيم الهيرو الى عمودين متساويين */
+  display:grid;grid-template-columns:1fr 1fr;
+  /* اخفي اي اشي بطلع عن حدود الشاشة فمبطلعش اشي  */
+  overflow:hidden;
+}
+
+/* .hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(242,210,66,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(129,57,141,0.12) 0%, transparent 50%);
+  pointer-events:none;
+} */
+
+
+.hero-shapes{
+  /* يخليها فوق الهيرو  */
+  position:absolute;
+  /* تغطي كل قسم الهيرو */
+  inset:0
+  ;pointer-events:none;
+  overflow:hidden;
+}
+/* خصائص الأشكال */
+.shape{position:absolute;
+  border-radius:10px}
+  /* خصائص دريفت  */
+/* خصائص الأشكال نفسها */
+.s1{width:18px;height:18px;background:var(--yellow);top:15%;left:8%;opacity:.7;animation:drift1 7s ease-in-out infinite}
+.s2{width:12px;height:12px;background:var(--magenta);top:30%;left:18%;opacity:.5;animation:drift2 9s ease-in-out infinite}
+.s3{width:22px;height:22px;background:var(--purple-mid);bottom:25%;left:5%;opacity:.4;animation:drift1 11s ease-in-out infinite reverse}
+.s4{width:8px;height:8px;background:var(--yellow);bottom:40%;right:25%;opacity:.8;border-radius:50%;animation:drift2 6s ease-in-out infinite}
+.s5{width:14px;height:14px;background:var(--magenta);top:60%;right:35%;opacity:.3;animation:drift1 8s ease-in-out infinite 2s}
+
+/* قسم الكلام عنى أثر */
+.hero-left{
+  /* ترتيب العناصر جنب بعضها */
+  display:flex;
+  flex-direction:column;
+  /* توسيط الكلام داخل القسم قسمناه فوق  */
+  justify-content:center;
+  padding:144px 48px 96px 80px;
+  /* لو في ابسلوت بخليه قالب او مرجع لاله */
+  position:relative;
+  z-index:2;
+}
+
+/* قرطاسية افتراضية... */
+.hero-tag{
+  /* يرتب العناصر جواته بنفس الجحم وما ياخدوا سطر جديد */
+  align-items:center;
+  gap:9.6px;
+  font-size:15px;
+  /* عريض bold */
+  font-weight:700;
+  letter-spacing:2.3px;
+  color:var(--yellow);
+  text-transform:uppercase;
+  margin-bottom:32px;
+   animation:slideUp 1s ease both;
+}
+
+/* مكانك الذي تبدأ ... */
+.hero-title{
+  font-family:'Aref Ruqaa',serif;
+  /* clamp(min, preferred, max) */
+  /* على الموبايل: صغير
+على اللابتوب: متوسط
+على الشاشات الكبيرة: كبير جدًا */
+  font-size:clamp(41.6px,5.5vw,80px);
+  color:var(--off-white);line-height:1.2;
+  margin-bottom: 24px;
+  animation:slideUp .2s ease both;
+}
+.hero-title .atherk{color:var(--yellow)}
+
+/* مكانك بلابلابلا */
+.tagline{
+  font-size:18 px;
+  color:var(--off-white);
+  line-height:1.9;max-width:42ch;
+  margin-bottom:48px;
+  animation:slideUp .9s .15s ease both;
+}
+
+/* أزرار الهيرو */
+.hero-buttons{display:flex;
+  /* المسافة بين البوتونز */
+  gap:18px;
+  /* بتخلي العناصر جنب بعضها بالشاشة الكاملة وبتضغطهم بالشاشة الصغيط زي الفيسابيلتي بتعمل */
+  flex-wrap:wrap;
+  /* بووث عشان تختفي وتظهر مع باقي الكلام في الهيرو */
+  animation:slideUp .9s .3s ease both} 
+
+.btn-right{
+  background:var(--yellow);
+  color:var(--purple-deep);
+  font-family:'Cairo',sans-serif;
+  font-weight:800;
+  font-size:12px;
+  padding:13px 32px;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  /* يجو جنب بعض وله حجم */
+  display:inline-block;
+  /* التغيير على الباك جرواند */
+  transition:background .3s,
+  /*بمقدار هلقد  */
+  transform .2s;
+}
+/* لما يجي المواس على الزر اليمين */
+.btn-right:hover{background:#fde06a;
+  /*حرك العنصر على المحور y */
+  transform:translateY(-2px)}
+
+
+.btn-more{
+  /* خلفية بدون لون */
+  background:transparent;
+  color:var(--off-white);
+  font-family:'Cairo',sans-serif;font-weight:600;font-size:12px;
+  padding:9px 12px;
+  border:1.5px solid var(--off-white);
+  cursor:pointer;text-decoration:none;
+  transition:border-color ,
+}
+.btn-more:hover{border-color:var(--yellow);
+  color:var(--yellow)}
+
+
+
+
+
+
+
+
+
+/* سيكشن الفيديو (نحن قسمنا الشاشة لنصين فوق الاكواد) */
+.hero-right{
+  /* تيجي جنب العناصر */
+  display:flex;
+  /*  يخلي الفيديو بالنص من فوق ومن تحت */
+  align-items:center;
+  /* وسطوا افقي */
+  justify-content:center;
+  margin-top: 40px;
+}
+
+.hero-video-sec{
+/* صغير الفيديو */
+  max-width:500px;
+  aspect-ratio: 4 / 5;
+
+  border-radius: 20px;
+  /* ما تطلع العناصر برا الشاشة أو المساحة */
+  overflow: hidden;
+
+}
+
+.hero-video{
+  margin-top: 24px;
+  /* الترانسفير لازم تكون 100 ولا كانه اللون ما بصير تدرح  */
+  /* الوايت يلي مبين من الدايرة كل ما قل كل ما اخد اللون اكتر الصورة */
+  -webkit-mask-image:
+   radial-gradient(circle at top left, white 50%, transparent 100%),
+    radial-gradient(circle at top right, white 50%, transparent 100%),
+    radial-gradient(circle at bottom left , white 90%, transparent 100%),
+    radial-gradient(circle at bottom right, white 60%, transparent 100%);
+
+    /*الجزي يلي مشترك بالحواف هو يلي يظهر وهو جزء يلي بالنص */
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
+}
+
+
+/* فيديو ريسبونس (يصغر لما يصغر الشاشة */
+
+/* بيعطي تعليمات للمتصفح عن الشاشة */
+@media (max-width:768px){
+/* الهرو يصير أعمدة */
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right{
+    width:100%;
+    padding:18px;
+  }
+
+  /* أكتر ويدث كدا خود العرض كله */
+  .hero-video-sec{
+    max-width:300px;
+    margin:auto;
+  }
+
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.products-section{background:var(--off-white)}
+
+/* صفات السيكشن كله */
+.section-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:50px 3px;
+}
+
+/* اختيارات أثر*/
+.s-tag{
+  font-size:12px;
+  font-weight:800;
+  /* letter-spacing:.22em; */
+  color:var(--magenta);
+  /* text-transform:uppercase; */
+  display:block;
+  margin-bottom:12px;
+}
+
+/* منتجاتنا المميزة*/
+.s-title{
+  font-family:'Aref Ruqaa',serif;
+  /* حجم الخط الأصغر والانسب والأكبر */
+  font-size:clamp(28.8px,3.5vw,45px);
+  color:var(--purple-deep);
+  line-height:1.25;
+}
+
+
+.products-header{margin-bottom:45px;
+  display:flex;
+  justify-content:space-between;
+  /* بتخلي العناصر ينزلو أسفل الحاوية الي هي العامود */
+  align-items:flex-end;
+/* بخلي ينزل سطر اذا انضغط */
+  flex-wrap:wrap;
+  gap:18px}
+  
+.products-grid{
+  /* خليها جريدلايأوت صفوف و أعمدة */
+  display:grid;
+  /* كم عمود والمسافة بينهم متساوية */
+  grid-template-columns:repeat(4,1fr);
+  /* المسافة بينهم تكون */
+  gap:24px;
+}
+
+/* ديف المتنج ككل يعني عمود المنتج وكل المنتجات نفس اسم الكلاس فراح ياخدوا نفس الصفات */
+.prod-card{
+  background:white;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  /* ترانسفورم اي حركة زي دوران سكيل  تحريك */
+  transition:transform .35s;
+}
+/* لما يجي الماوس على عمود المنتج */
+.prod-card:hover{
+  transform:translateY(-8px);
+}
+
+
+/* خواص صورة الغلاف */
+.prod-img{
+  /* أخدت حجم العامود */
+  width:100%;
+  /* الصورة دايما مربعة مهما كانت أبعادها */
+  aspect-ratio:1/1;
+  display:flex;
+  /* محتوياتها بالنص */
+  /* توسيط عمودي */
+  align-items:center;
+  /* توسيط أفقي */
+  justify-content:center;
+  /* صار مرجع للعناصر التانية حاوية */
+  /* position:relative; */
+  overflow:hidden;
+}
+
+
+
+.prod-bg-1{
+  background:linear-gradient(135deg,#29164b,#614fa1);
+}
+
+.prod-bg-2{
+  background:linear-gradient(135deg,#614fa1,#81398d);
+}
+
+.prod-bg-3{
+  background:linear-gradient(135deg,#81398d,#29164b);
+}
+
+.prod-bg-4{
+  background:linear-gradient(135deg,#81398d,#29164b);
+}
+.prod-bg-5{
+  background:linear-gradient(135deg,#614fa1,#81398d);
+}
+
+.prod-bg-6{
+  background:linear-gradient(135deg,#f2d242,#e8b800);
+}
+
+.prod-bg-7{
+  background:linear-gradient(135deg,#81398d,#29164b);
+}
+
+/* .prod-pattern-overlay{
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(242,210,66,.15) 8px, transparent 8px),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,.08) 6px, transparent 6px);
+  background-size:30px 30px;
+} */
+
+
+.star{
+  /* يتحرك بحرية داخل الحاوية */
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:var(--yellow);
+  color:var(--purple-deep);
+  font-size:10px;
+  /* font-weight:400px; */
+  /* letter-spacing:0.8px; */
+  padding:3px 9px;
+}
+
+/* اسم المنتج */
+.prod-name{
+  font-family:'Aref Ruqaa',serif;
+  font-size:16px;
+  color:var(--purple-deep);
+  margin-top: 12px;
+  margin-bottom:1px;
+}
+
+/* الي تحت اسم المنتج */
+.prod-desc-sm{
+  font-size:15px;
+  color:rgba(41,22,75,.55);
+  /* line-height:1.5; */
+}
+
+.prod-footer{
+  margin: 12px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:2px 3px;
+  border-top:1px solid rgba(97,79,161,.1);
+}
+
+.prod-price{
+  font-size:14px;
+  font-weight:800;
+  color:var(--magenta);
+}
+/* + */
+
+.prod-add{
+  background:var(--purple-deep);
+
+  padding:8px 8px;
+  
+  color:white;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  font-weight:200;
+
+  transition:background .2s;
+}
+
+.prod-add:hover{
+  background:var(--magenta);
+}
+
+/* الريسبونسيف للسيكشن */
+@media(max-width:400px){
+  .products-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .products-grid{
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+  }
+}
+
+
+/* زر الاضافة */
+.cart-toast{
+  /* العنصر ثابت بالنسبة لشاشة */
+  position:fixed;
+  /* بعده عن أسفل الشاشة */
+  bottom:32px;
+  /*  وانها من ترانسيليت واي بكون ,تنصيف العنصر */
+  left:50%;
+  background:var(--purple-deep);
+  color:var(--yellow);
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+  font-size:14.4px;
+  padding:14.4px 32px;
+  border:2px solid var(--yellow);
+  z-index:999;
+
+  /* الاخفاء */
+  transform:translateX(-50%) translateY(100px);
+
+/* بداية الحركة
+بزيد
+منتصف الحركة
+النهاية
+EASE */
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+/*  عند الظهور */
+.cart-toast.show{
+  transform:translateX(-50%) translateY(0);
+}
+
+
+/* الصور تبعت المنتجات تضلها نفس حجم المربعات تبعتها */
+.prod-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.pp-rel-img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+
+
+/* -------------------------------------------------------------------- */
+/* قسم الهوية */
+.about-section {
+  background: #29164b;
+  overflow: hidden;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 6rem 3rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-pattern-box {
+  width: 360px;
+  height: 400px;
+  /* background: #614fa1; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about-main-image {
+  width: 100%;
+  height: calc(100% - 80px);
+  object-fit: cover;
+}
+
+.about-visual-label {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.8rem;
+  color: #fefdec;
+  text-align: center;
+}
+
+.about-visual-sub {
+  font-size: .75rem;
+  color: #c5b8e8;
+  letter-spacing: .15em;
+  text-align: center;
+}
+
+.s-tag {
+  font-size: 300px;
+  font-weight: 700;
+  color: #f2d242;
+}
+
+.s-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-top: 1rem;
+  line-height: 1.3;
+}
+
+.about-text {
+  margin-top: 1.2rem;
+  font-size: .95rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,.65);
+}
+
+.about-values {
+  margin-top: 2rem;
+}
+
+.value-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .8rem;
+  color: rgba(255,255,255,.8);
+}
+
+.value-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.vd-y { background: #f2d242; }
+.vd-m { background: #81398d; }
+.vd-p { background: #c5b8e8; }
+
+.btn-y {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: .8rem 2rem;
+  background: #f2d242;
+  color: #29164b;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-y:hover {
+  background: #ffdf6a;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-pattern-box {
+    margin: auto;
+  }
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+/* الحقوق محفوظة */
+
+.footer-mini{
+  background:#1d0f35;
+  padding:22px 40px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-mini-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Cairo',sans-serif;
+  font-size:13px;
+  color:rgba(255,255,255,.55);
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .footer-mini-inner{
+    flex-direction:column;
+    gap:6px;
+    text-align:center;
+  }
+}

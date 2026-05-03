@@ -1,0 +1,253 @@
+:root {
+  --purple-deep: #29164b;
+  --purple-mid: #614fa1;
+  --yellow: #f2d242;
+  --off-white: #fefdec;
+  --magenta: #81398d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #fff;
+  color: var(--purple-deep);
+  overflow-x: hidden;
+}
+
+/* الصفحة */
+#products-page {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+  background: #fff;
+  padding-top: 95px;
+}
+
+/* الشريط العلوي */
+.pp-nav {
+  width: 100%;
+  background: var(--purple-deep);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border-bottom: 2px solid var(--yellow);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.pp-back {
+  background: none;
+  border: none;
+  color: var(--off-white);
+  font-size: 15px;
+  /* font-weight: 700; */
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Cairo', sans-serif;
+}
+
+.pp-back:hover {
+  /* transform: translateX(5px); */
+  opacity: 0.85;
+}
+
+.pp-back-arrow {
+  margin-left: 8px;
+}
+
+.pp-cart-count {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* محتوى القسم */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 3rem 5rem;
+}
+
+.s-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: var(--magenta);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.s-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--purple-deep);
+  line-height: 1.25;
+}
+
+.s-desc {
+  font-size: 0.96rem;
+  color: rgba(41, 22, 75, 0.65);
+  line-height: 1.85;
+  max-width: 60ch;
+  margin-top: 1rem;
+}
+
+/* شبكة المنتجات */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* كرت المنتج */
+.product-card {
+  background: var(--off-white);
+  border: 1.5px solid rgba(97, 79, 161, 0.15);
+  overflow: hidden;
+  transition: 0.3s;
+  border-radius: 16px;
+
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--purple-mid);
+  box-shadow: 0 10px 25px rgba(41, 22, 75, 0.08);
+}
+
+/* مربع الصورة */
+.product-image {
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(97,79,161,0.08),
+    rgba(242,210,66,0.18)
+  );
+}
+
+/* الصورة نفسها */
+.product-image img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.3s ease;
+
+}
+
+/* تكبير خفيف عند hover */
+.product-card:hover .product-image img {
+
+  transform: scale(1.05);
+
+}
+
+/* معلومات المنتج */
+.product-info {
+  padding: 1.2rem;
+}
+
+.product-name {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.3rem;
+  color: var(--purple-deep);
+  margin-bottom: 0.4rem;
+}
+
+.product-text {
+  font-size: 0.84rem;
+  color: rgba(41, 22, 75, 0.6);
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.product-price {
+  color: var(--magenta);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* انيميشن الظهور */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* تابلت */
+@media (max-width: 992px) {
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-inner {
+    padding: 2.5rem 2rem 4rem;
+  }
+
+}
+
+/* موبايل */
+@media (max-width: 600px) {
+
+  #products-page {
+    padding-top: 120px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-inner {
+    padding: 2rem 1.2rem 4rem;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .pp-nav {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .s-title {
+    font-size: 1.7rem;
+  }
+
+}

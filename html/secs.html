@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منتجات القسم</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/sec_pro.css" />
+</head>
+<body>
+
+  <section id="products-page" class="products-section">
+    <nav class="pp-nav">
+      <button class="pp-back" onclick="closePage()">
+        <span class="pp-back-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        العودة للمتجر
+      </button>
+
+      <!-- <div class="pp-cart-bar">
+        <span class="pp-cart-count">
+          السلة: <span id="cart-count">٠</span> منتج
+        </span>
+      </div> -->
+    </nav>
+
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="s-tag">منتجات القسم</span>
+        <h2 id="products-title" class="s-title">اسم القسم</h2>
+        <p id="products-desc" class="s-desc">وصف القسم</p>
+      </div>
+
+      <div id="products-grid" class="products-grid"></div>
+    </div>
+  </section>
+
+  <script src="../js/sec_pro.js"></script>
+</body>
+</html>

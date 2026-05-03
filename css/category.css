@@ -1,0 +1,80 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* which cخlore do you want to use ? */
+/*العنصر الأساسي  يعني هادي الألوان يلي بدي اياها  */
+:root{
+  --purple-deep: #29164b;
+  --purple-mid:  #614fa1;
+  --purple-soft: #614FA1;
+  --magenta:     #81398d;
+  --yellow:      #f2d242;
+  --off-white:   #fefdec;
+  --white:       #ffffff;
+  --purple-dark2:#1d0f35;
+}
+
+
+
+/* ══ SHARED SECTION ══ */
+section{
+  position:relative;
+  z-index:1}
+.section-inner{max-width:1200px;margin:0 auto;padding:6rem 3rem}
+.s-tag{
+  font-size:.72rem;font-weight:800;letter-spacing:.22em;
+  color:var(--magenta);text-transform:uppercase;
+  display:block;margin-bottom:.9rem;
+}
+.s-title{
+  font-family:'Aref Ruqaa',serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  color:var(--purple-deep);line-height:1.25;
+}
+.s-desc{font-size:.96rem;color:rgba(41,22,75,.65);line-height:1.85;max-width:60ch;margin-top:1rem}
+
+/* ══ CATEGORIES ══ */
+.cats-section{background:var(--off-white)}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.cat-card{
+  border:1.5px solid rgba(97,79,161,.15);
+  padding:2.2rem;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:border-color .3s,transform .3s;
+  background:white;
+}
+.cat-card::after{
+  content:'';position:absolute;
+  bottom:0;right:0;
+  width:0;height:3px;
+  background:var(--yellow);
+  transition:width .4s;
+}
+.cat-card:hover::after{width:100%}
+.cat-card:hover{border-color:var(--purple-mid);transform:translateY(-4px)}
+
+/* .cat-icon-box{
+  width:52px;height:52px;
+  background:var(--purple-deep);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:1.2rem;
+} */
+.cat-name{font-family:'Aref Ruqaa',serif;font-size:1.25rem;color:var(--purple-deep);margin-bottom:.4rem}
+.cat-desc{font-size:.8rem;color:rgba(41,22,75,.55);line-height:1.55}
+/* .cat-count{font-size:.72rem;font-weight:700;color:var(--magenta);margin-top:.8rem;letter-spacing:.05em} */
+
+/* ══ REVEAL ══ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Tablet (≤ 900px) */
+@media(max-width:900px){
+  .section-inner{padding:4rem 2rem}
+  .cats-grid{grid-template-columns:1fr 1fr}
+}
+
+/* Mobile (≤ 600px) */
+@media(max-width:600px){
+  .cats-grid{grid-template-columns:1fr}
+  .cat-card{padding:1.5rem}
+  .section-inner{padding:3rem 1.2rem}
+  .s-title{font-size:1.7rem}
+}

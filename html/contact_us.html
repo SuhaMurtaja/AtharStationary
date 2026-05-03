@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مكتبة أثر</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/contact_us.css" />
+</head>
+<body>
+
+  <!-- الشريط العلوي -->
+  <nav class="pp-nav">
+    <a href="../html/index.html" class="pp-back">
+      <span class="pp-back-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      العودة للمتجر
+    </a>
+  </nav>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <div class="contact-content">
+          <span class="s-tag">تواصل</span>
+          <h2 class="s-title">نحن هنا لك</h2>
+
+          <p class="s-desc">
+            هل عندك سؤال أو طلب خاص؟ راسلنا وسنردّ عليك في أقرب وقت.
+          </p>
+
+          <div class="contact-info">
+            <div class="ci-row">
+              <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="ci-text">
+                <span class="ci-label">العنوان</span>
+                غزة، فلسطين
+              </div>
+            </div>
+
+            <div class="ci-row">
+              <div class="ci-icon"><i class="fa-solid fa-at"></i></div>
+              <div class="ci-text">
+                <span class="ci-label">البريد الإلكتروني</span>
+                info@athar.store
+              </div>
+            </div>
+
+            <div class="ci-row">
+              <div class="ci-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div class="ci-text">
+                <span class="ci-label">إنستقرام</span>
+                @athar.store
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="name">الاسم</label>
+              <input
+                type="text"
+                id="name"
+                class="form-input"
+                placeholder="اسمك الكريم"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">البريد الإلكتروني</label>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="بريدك الإلكتروني"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">رسالتك</label>
+              <textarea
+                id="message"
+                class="form-input"
+                placeholder="كيف يمكننا مساعدتك؟"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-send">
+              إرسال الرسالة
+            </button>
+
+            <p class="form-message" id="formMessage"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer-mini">
+    <div class="footer-mini-inner">
+      <span class="footer-mini-left">
+        ATHAR STATIONERY ✦ مصنوع بإبداع
+      </span>
+
+      <span class="footer-mini-right">
+        &copy; ٢٠٢٦ مكتبة أثر — جميع الحقوق محفوظة
+      </span>
+    </div>
+  </footer>
+
+  <script src="../js/contact_us.js"></script>
+</body>
+</html>
