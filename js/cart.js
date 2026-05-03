@@ -48,7 +48,7 @@ function renderCart() {
       <div class="empty-cart">
         <h3>السلة فارغة</h3>
         <p>لم يتم إضافة أي منتج بعد.</p>
-        <a href="index.html">العودة للتسوق</a>
+        <a href="../index.html">العودة للتسوق</a>
       </div>
     `;
     return;
