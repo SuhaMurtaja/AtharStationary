@@ -48,7 +48,7 @@ const PRODUCTS = {
 
       {
         id: 1,
-        image: "..pics/big_note.png",
+        image: "../pics/big_note.png",
         name: "دفتر أثر المميز",
         text: "دفتر أنيق مصمم لتدوين الأفكار والملاحظات اليومية.",
         price: "45 ₪"

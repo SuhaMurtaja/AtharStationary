@@ -561,9 +561,9 @@ model-viewer {
 }
 
 /* رسالة السلة */
-.cart-toast {
+/* .cart-toast {
   position: fixed;
-  bottom: 2rem;
+  bottom: -10rem;
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   background: var(--purple-deep);
@@ -579,8 +579,29 @@ model-viewer {
 }
 
 .cart-toast.show {
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(30rem);
+} */
+
+.cart-toast{
+  position:fixed;
+  bottom:2rem;
+  left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:var(--purple-deep);
+  color:var(--yellow);
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+  font-size:.9rem;
+  padding:.9rem 2rem;
+  letter-spacing:.06em;
+  border:2px solid var(--yellow);
+  z-index:999;
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1);
 }
+.cart-toast.show{
+  transform:translateX(-50%) translateY(0);
+}
+
 
 /* تجاوب */
 @media (max-width: 900px) {

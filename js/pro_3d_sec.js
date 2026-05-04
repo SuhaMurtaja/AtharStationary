@@ -69,13 +69,13 @@ const PRODUCTS = [
   {
     id: 4,
     glb: '/glb/Pen.glb',
-    pic: '/pics/Spacenotebook.jpeg',
+    pic: '/pics/pen.jpeg',
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
     badge: null,
     badgeClass: '',
     cat: 'الأقلام والألوان',
-    icon: '/pics/Spacenotebook.jpeg',
+    icon: '/pics/pen.jpeg',
     bgClass: 'prod-bg-2',
     desc: 'قلم أنيق ومريح بحبر ناعم يناسب الكتابة اليومية والدراسة والعمل.',
     specs: [
@@ -267,7 +267,7 @@ const PRODUCTS = [
   {
     id: 14,
     glb: '/glb/drawingBook.glb',
-    pic: '/pics/adrowing_note.png',
+    pic: '/pics/drowing_note.png',
     name: 'دفتر رسم',
     price: '٢٧ ₪',
     badge: null,
