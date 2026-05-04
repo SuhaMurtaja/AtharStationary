@@ -23,14 +23,14 @@ function closeMenu() {
 const PRODUCTS = [
   {
     id: 1,
-    glb: '../glb/notebook.glb',
-    pic: "../pics/big_note.png",
+    glb: 'glb/notebook.glb',
+    pic: "pics/big_note.png",
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
     badge: 'جديد',
     badgeClass: 'pp-badge-new',
     cat: 'الدفاتر والمفكرات',
-    icon: '../pics/big_note.png',
+    icon: 'pics/big_note.png',
     bgClass: 'prod-bg-1',
     desc: 'دفتر أثر المميز هو رفيقك اليومي للأفكار، الملاحظات، والإبداع. مصمّم بعناية لتعكس هويتنا البصرية بألوانها الغنية وأنماطها الهندسية الفريدة. الغلاف مصنوع من كرتون فاخر بطبقة حماية مطفية، والصفحات من ورق أبيض ناعم مقاس ٨٠ جرام مناسب لجميع أنواع الأقلام.',
     specs: [
@@ -44,13 +44,13 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    glb: '/glb/Pen.glb',
-    pic: "/pics/pen.png",
+    glb: 'glb/Pen.glb',
+    pic: "pics/pen.png",
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: '/pics/pen.png',
+    icon: 'pics/pen.png',
     bgClass: 'prod-bg-2',
     desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّم للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
