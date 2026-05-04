@@ -136,12 +136,12 @@ const PRODUCTS = [
   {
     id: 7,
     glb: 'glb/medi.glb',
-    pic: "github.com/SuhaMurtaja/AtharStationary/blob/master/pics/mid.jpeg?raw=true",
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mid.jpeg",
     name: "ميدالية أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: 'github.com/SuhaMurtaja/AtharStationary/blob/master/pics/mid.jpeg?raw=true',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mid.jpeg',
     bgClass: 'prod-bg-2',
     desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّد للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
