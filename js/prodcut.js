@@ -215,7 +215,7 @@ function openPage(id) {
   const related = PRODUCTS.filter(x => x.id !== id);
   const relHTML = related.map(r =>
     `<div class="pp-rel-card" onclick="openPage(${r.id})">
-      <img src="${r.icon || r.pic}" class="pp-rel-img" alt="${r.name}">
+      <img src="${r.icon || r.pic}" class="pp-rel-img" alt="${r.name}" loading="lazy">
       <div>
         <div class="pp-rel-name">${r.name}</div>
         <div class="pp-rel-price">${r.price}</div>
@@ -255,7 +255,7 @@ function openPage(id) {
           <div class="placeholder-ring"></div>
           <div class="placeholder-ring-2"></div>
           <div class="placeholder-icon">
-            <img src="${p.pic}" alt="${p.name}" style="width:120px; height:120px; object-fit:contain;">
+            <img src="${p.pic}" alt="${p.name}" style="width:120px; height:120px; object-fit:contain;  loading="lazy";">
           </div>
           <div class="placeholder-label">عرض ثلاثي الأبعاد<br>قريباً</div>
           <div class="placeholder-glb-hint">GLB · GLTF READY</div>
@@ -279,6 +279,7 @@ function openPage(id) {
         <img
           src="${p.pic}"
           alt="${p.name}"
+          loading="lazy"
           style="
             width: 100%;
             height: 100%;

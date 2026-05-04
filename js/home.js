@@ -1,4 +1,4 @@
-{// ==========================================
+// ==========================================
 // قائمة الهامبرغر
 // ==========================================
 function toggleMenu() {
@@ -64,7 +64,7 @@ function showToast() {
 }
 
 // ==========================================
-// إضافة منتج لسلة الصفحة الرئيسية
+// إضافة منتج للسلة
 // ==========================================
 function addToHomeCart(product) {
   const cart = getHomeCart();
@@ -102,7 +102,8 @@ function setupAddToCartButtons() {
         id: Number(btn.dataset.id),
         name: btn.dataset.name,
         price: btn.dataset.price,
-        pic: btn.dataset.pic
+        pic: btn.dataset.pic,
+        glb: btn.dataset.glb // <- تم إضافة دعم تحميل GLB
       };
 
       if (!product.id || !product.name || !product.price || !product.pic) {
@@ -126,9 +127,38 @@ function setupAddToCartButtons() {
 }
 
 // ==========================================
+// إنشاء العنصر ثلاثي الأبعاد (Model Viewer)
+// ==========================================
+function create3DViewer(product) {
+  const container = document.createElement("div");
+  container.className = "model-viewer-container";
+
+  // استخدم data-src بدلاً من src لتفعيل Lazy Loading
+  const viewer = document.createElement("model-viewer");
+  viewer.setAttribute("data-src", product.glb); // Lazy Loading للـ GLB
+  viewer.setAttribute("alt", product.name);
+  viewer.setAttribute("camera-controls", "");
+  viewer.setAttribute("style", "width:100%; height:400px; display:block; background:transparent;");
+  viewer.setAttribute("interaction-prompt", "auto");
+
+  // ⚠ إيقاف auto-rotate
+  // لا تضيف auto-rotate هنا، لذا الدوران التلقائي متوقف
+
+  container.appendChild(viewer);
+  document.body.appendChild(container);
+
+  // تحميل الـ GLB عند العرض
+  container.addEventListener("mouseenter", () => {
+    if (viewer.dataset.src && !viewer.src) {
+      viewer.src = viewer.dataset.src; // تحميل عند الحاجة (Lazy)
+    }
+  });
+}
+
+// ==========================================
 // تشغيل عند فتح الصفحة
 // ==========================================
 document.addEventListener("DOMContentLoaded", function () {
   updateHomeCartCount();
   setupAddToCartButtons();
-});}
+});

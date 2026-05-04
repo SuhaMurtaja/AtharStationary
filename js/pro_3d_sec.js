@@ -377,7 +377,7 @@ function openPage(id) {
 
   const relHTML = related.map(r => `
     <div class="pp-rel-card" onclick="openRelatedProduct(${r.id})">
-      <img src="${r.icon || r.pic}" alt="${r.name}" class="pp-rel-img">
+      <img src="${r.icon || r.pic}" alt="${r.name}" class="pp-rel-img" loading="lazy">
       <div>
         <div class="pp-rel-name">${r.name}</div>
         <div class="pp-rel-price">${r.price}</div>
@@ -408,7 +408,7 @@ function openPage(id) {
               id="pp-viewer"
               src="${modelSrc}"
               alt="${p.name}"
-              auto-rotate
+              loading="lazy"
               camera-controls
               shadow-intensity="1"
               exposure="0.9"
@@ -454,6 +454,7 @@ function openPage(id) {
             height:100%;
             object-fit:cover;
             display:block;
+            loading="lazy"
           "
         >
       </div>

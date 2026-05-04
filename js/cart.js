@@ -61,7 +61,7 @@ function renderCart() {
     return `
       <div class="cart-item">
         <div class="cart-item-image">
-          <img src="${item.pic}" alt="${item.name}">
+          <img src="${item.pic}" alt="${item.name}" loading="lazy">
         </div>
 
         <div class="cart-item-info">
