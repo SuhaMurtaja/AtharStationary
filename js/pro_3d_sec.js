@@ -4,7 +4,7 @@ const PRODUCTS = [
   // =========================
   {
     id: 1,
-    glb: '../glb/notebook.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/notebook.glb',
     pic: '../pics/big_note.png',
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
@@ -25,7 +25,7 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    glb: '../glb/DuckNotebook.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/DuckNotebook.glb',
     pic: '../pics/duck.jpeg',
     name: 'دفتر سلك',
     price: '١٨ ₪',
@@ -45,7 +45,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    glb: '../glb/Spacenotebook.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Spacenotebook.glb',
     pic: '../pics/Spacenotebook.jpeg',
     name: 'مفكرة صغيرة',
     price: '١٢ ₪',
@@ -68,7 +68,7 @@ const PRODUCTS = [
   // =========================
   {
     id: 4,
-    glb: '../glb/Pen.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Pen.glb',
     pic: '../pics/pen.jpeg',
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
@@ -88,7 +88,7 @@ const PRODUCTS = [
   },
   {
     id: 5,
-    glb: '../glb/color_pins.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/color_pins.glb',
     pic: '../pics/wood_pins.png',
     name: 'ألوان خشبية',
     price: '٢٢ ₪',
@@ -107,7 +107,7 @@ const PRODUCTS = [
   },
   {
     id: 6,
-    glb: '../glb/marker.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/marker.glb',
     pic: '../pics/marker.jpg',
     name: 'محددات  ملونة',
     price: '١٦ ₪',
@@ -126,7 +126,7 @@ const PRODUCTS = [
   },
   {
     id: 7,
-    glb: '../glb/5_color_pin.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/5_color_pin.glb',
     pic: '../pics/5_color_pin.png',
     name: 'قلم متعدد الألوان',
     price: '١٠ ₪',
@@ -148,7 +148,7 @@ const PRODUCTS = [
   // =========================
   {
     id: 8,
-    glb: '../glb/dailyplanner.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/dailyplanner.glb',
     pic: '../pics/dailyplanner.jpeg',
     name: 'منظّم المهام اليومي',
     price: '٦٠ ₪',
@@ -167,7 +167,7 @@ const PRODUCTS = [
   },
   {
     id: 9,
-    glb: '../glb/MonthlyPlanner.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/MonthlyPlanner.glb',
     pic: '../pics/month_planner.jpeg',
     name: 'بلانر شهري',
     price: '٢٨ ₪',
@@ -186,7 +186,7 @@ const PRODUCTS = [
   },
   {
     id: 10,
-    glb: '../glb/TodoList.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/TodoList.glb',
     pic: '../pics/todo_list.jpeg',
     name: 'لوحة مهام',
     price: '١٦ ₪',
@@ -205,7 +205,7 @@ const PRODUCTS = [
   },
   {
     id: 11,
-    glb: '../glb/stiky.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/stiky.glb',
     pic: '../pics/stiky.png',
     name: 'مذكرة لاصقة',
     price: '٩ ₪',
@@ -228,7 +228,7 @@ const PRODUCTS = [
   // =========================
   {
     id: 12,
-    glb: '../glb/water_color.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/water_color.glb',
     pic: '../pics/water_color.png',
     name: 'ألوان مائية',
     price: '٣٢ ₪',
@@ -247,7 +247,7 @@ const PRODUCTS = [
   },
   {
     id: 13,
-    glb: '../glb/coloring_pins.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/coloring_pins.glb',
     pic: '../pics/coloring_pins.png',
     name: 'فرشاة رسم',
     price: '١٨ ₪',
@@ -266,7 +266,7 @@ const PRODUCTS = [
   },
   {
     id: 14,
-    glb: '../glb/drawingBook.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/drawingBook.glb',
     pic: '../pics/drowing_note.png',
     name: 'دفتر رسم',
     price: '٢٧ ₪',
@@ -285,7 +285,7 @@ const PRODUCTS = [
   },
   {
     id: 15,
-    glb: '../glb/drowing_wood.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/drowing_wood.glb',
     pic: '../pics/drowing_wood.png',
     name: 'لوحة ألوان',
     price: '١٤ ₪',
@@ -304,7 +304,7 @@ const PRODUCTS = [
   },
   {
     id: 16,
-    glb: '../glb/Coloringbook.glb',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Coloringbook.glb',
     pic: '../pics/coloring.jpeg',
     name: 'دفتر رسومات ',
     price: '٢٥ ₪',
