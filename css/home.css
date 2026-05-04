@@ -622,7 +622,7 @@ nav{
   /* العنصر ثابت بالنسبة لشاشة */
   position:fixed;
   /* بعده عن أسفل الشاشة */
-  bottom:32px;
+  bottom:40px;
   /*  وانها من ترانسيليت واي بكون ,تنصيف العنصر */
   left:50%;
   background:var(--purple-deep);

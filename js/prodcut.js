@@ -45,12 +45,12 @@ const PRODUCTS = [
   {
     id: 2,
     glb: 'glb/Pen.glb',
-    pic: "pics/pen.png",
+    pic: "pics/pen.jpeg",
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: 'pics/pen.png',
+    icon: 'pics/pen.jpeg',
     bgClass: 'prod-bg-2',
     desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّم للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
