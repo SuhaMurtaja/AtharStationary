@@ -23,14 +23,14 @@ function closeMenu() {
 const PRODUCTS = [
   {
     id: 1,
-    glb: '../glb/notebook.glb',
-    pic: "../pics/big_note.png",
+    glb: '/glb/notebook.glb',
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/big_note.png",
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
     badge: 'جديد',
     badgeClass: 'pp-badge-new',
     cat: 'الدفاتر والمفكرات',
-    icon: '../pics/big_note.png',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/big_note.png',
     bgClass: 'prod-bg-1',
     desc: 'دفتر أثر المميز هو رفيقك اليومي للأفكار، الملاحظات، والإبداع. مصمّم بعناية لتعكس هويتنا البصرية بألوانها الغنية وأنماطها الهندسية الفريدة. الغلاف مصنوع من كرتون فاخر بطبقة حماية مطفية، والصفحات من ورق أبيض ناعم مقاس ٨٠ جرام مناسب لجميع أنواع الأقلام.',
     specs: [
@@ -44,13 +44,13 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    glb: '../glb/Pen.glb',
-    pic: "../pics/pen.jpeg",
+    glb: '/glb/Pen.glb',
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/pen.jpeg",
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: '../pics/pen.jpeg',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/pen.jpeg',
     bgClass: 'prod-bg-2',
     desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّم للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
@@ -64,13 +64,13 @@ const PRODUCTS = [
   {
     id: 3,
     glb: '/glb/smallnote.glb',
-    pic: "/pics/small note.jpeg",
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/small%20note.jpeg",
     name: 'منظّم المهام اليومي',
     price: '٦٠ ₪',
     badge: 'الأكثر مبيعًا',
     badgeClass: 'pp-badge-new',
     cat: 'التنظيم والتخطيط',
-    icon: '/pics/small note.jpeg',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/small%20note.jpeg',
     bgClass: 'prod-bg-3',
     desc: 'نوتة عملية وأنيقة تساعدك على ترتيب يومك وتسجيل مهامك بسهولة. مناسبة لتدوين الخطط اليومية، المواعيد، والأهداف، مع تصميم مريح يجعل التنظيم أبسط وأجمل. خيار مثالي للدراسة، العمل، أو الاستخدام الشخصي اليومي.',
     specs: [
@@ -86,12 +86,12 @@ const PRODUCTS = [
   {
     id: 4,
     glb: '/glb/finalcelender.glb',
-    pic: "/pics/taqweem.jpeg",
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/taqweem.jpeg",
     name: 'تقويم أثر الصغير',
     price: '٢٥ ₪',
     badge: null,
     cat: 'أدوات الفنون',
-    icon: "/pics/taqweem.jpeg",
+    icon: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/taqweem.jpeg",
     bgClass: 'prod-bg-4',
     desc: ' تقويم أنيق وعملي بحجم مثالي للمكتب، يساعدك على متابعة الأيام والمواعيد بسهولة. تصميم بسيط وواضح يضيف لمسة مرتبة لمساحتك، مع إمكانية الاستخدام اليومي في الدراسة أو العمل. صغير بالحجم، كبير بالفائدة ✨',
     specs: [
@@ -104,12 +104,12 @@ const PRODUCTS = [
   {
     id: 5,
     glb: '/glb/Clock.glb',
-    pic: "/pics/clock.jpeg",
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/clock.jpeg",
     name: "ساعة أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: '/pics/clock.jpeg',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/clock.jpeg',
     bgClass: 'prod-bg-2',
     desc: ' ساعة حائط بتصميم عصري تضيف لمسة جمالية لأي مساحة في منزلك أو مكتبك. تتميز بدقة في عرض الوقت مع شكل بسيط وأنيق يناسب مختلف الديكورات. عملية وسهلة القراءة، لتكون أكثر من مجرد ساعة… قطعة ديكور تكمل المكان.',
     specs: [
@@ -122,12 +122,12 @@ const PRODUCTS = [
   {
     id: 6,
     glb: '/glb/mug.glb',
-    pic: "/pics/mug.png",
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mug.png",
     name: "مج أثر المميز",
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: '/pics/mug.png',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mug.png',
     bgClass: 'prod-bg-2',
     desc: ' مج عملي بتصميم بسيط وجذاب، مثالي لقهوة الصباح أو شاي المساء. مصنوع بجودة عالية ليحافظ على مشروبك، مع شكل مريح في الاستخدام يضيف لمسة هادئة لروتينك اليومي. مناسب للمنزل أو المكتب.',
     specs: [
@@ -140,12 +140,12 @@ const PRODUCTS = [
   {
     id: 7,
     glb: '/glb/medi.glb',
-    pic: "/pics/mid.jpeg",
+    pic: "github.com/SuhaMurtaja/AtharStationary/blob/master/pics/mid.jpeg?raw=true",
     name: "ميدالية أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: '/pics/mid.jpeg',
+    icon: 'github.com/SuhaMurtaja/AtharStationary/blob/master/pics/mid.jpeg?raw=true',
     bgClass: 'prod-bg-2',
     desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّم للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
@@ -157,12 +157,12 @@ const PRODUCTS = [
   {
     id: 8,
     glb: '/glb/bag.glb',
-    pic: "/pics/bag.jpeg",
+    pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/bag.jpeg",
     name: "حقيبة أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
     cat: 'الأقلام والألوان',
-    icon: '/pics/bag.jpeg',
+    icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/bag.jpeg',
     bgClass: 'prod-bg-2',
     desc: 'حقيبة عملية بتصميم يحمل هوية أثر البصرية، مناسبة للاستخدام اليومي والدراسة والعمل. تجمع بين الشكل الجذاب والخامة العملية، وتمنح المنتج طابعًا مميزًا يعكس روح العلامة.',
     specs: [
