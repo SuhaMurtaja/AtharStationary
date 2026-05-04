@@ -23,7 +23,7 @@ function closeMenu() {
 const PRODUCTS = [
   {
     id: 1,
-    glb: '/glb/notebook.glb',
+    glb: 'glb/notebook.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/big_note.png",
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
@@ -44,7 +44,7 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    glb: '/glb/Pen.glb',
+    glb: 'glb/Pen.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/pen.jpeg",
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
@@ -63,7 +63,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    glb: '/glb/smallnote.glb',
+    glb: 'glb/smallnote.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/small%20note.jpeg",
     name: 'منظّم المهام اليومي',
     price: '٦٠ ₪',
@@ -85,7 +85,7 @@ const PRODUCTS = [
   },
   {
     id: 4,
-    glb: '/glb/finalcelender.glb',
+    glb: 'glb/finalcelender.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/taqweem.jpeg",
     name: 'تقويم أثر الصغير',
     price: '٢٥ ₪',
@@ -103,7 +103,7 @@ const PRODUCTS = [
   },
   {
     id: 5,
-    glb: '/glb/Clock.glb',
+    glb: 'glb/Clock.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/clock.jpeg",
     name: "ساعة أثر المميزة",
     price: '٣٨ ₪',
@@ -121,7 +121,7 @@ const PRODUCTS = [
   },
   {
     id: 6,
-    glb: '/glb/mug.glb',
+    glb: 'glb/mug.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mug.png",
     name: "مج أثر المميز",
     price: '٣٨ ₪',
@@ -139,7 +139,7 @@ const PRODUCTS = [
   },
   {
     id: 7,
-    glb: '/glb/medi.glb',
+    glb: 'glb/medi.glb',
     pic: "github.com/SuhaMurtaja/AtharStationary/blob/master/pics/mid.jpeg?raw=true",
     name: "ميدالية أثر المميزة",
     price: '٣٨ ₪',
@@ -156,7 +156,7 @@ const PRODUCTS = [
   },
   {
     id: 8,
-    glb: '/glb/bag.glb',
+    glb: 'glb/bag.glb',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/bag.jpeg",
     name: "حقيبة أثر المميزة",
     price: '٣٨ ₪',
