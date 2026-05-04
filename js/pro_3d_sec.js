@@ -4,14 +4,14 @@ const PRODUCTS = [
   // =========================
   {
     id: 1,
-    glb: '/glb/notebook.glb',
-    pic: '/pics/big_note.png',
+    glb: '../glb/notebook.glb',
+    pic: '../pics/big_note.png',
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
     badge: 'جديد',
     badgeClass: 'pp-badge-new',
     cat: 'الدفاتر والمفكرات',
-    icon: '/pics/big_note.png',
+    icon: '../pics/big_note.png',
     bgClass: 'prod-bg-1',
     desc: 'دفتر أنيق مصمم لتدوين الأفكار والملاحظات اليومية بجودة عالية ولمسة عصرية مميزة.',
     specs: [
