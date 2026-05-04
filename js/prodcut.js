@@ -23,14 +23,14 @@ function closeMenu() {
 const PRODUCTS = [
   {
     id: 1,
-    glb: '/glb/notebook.glb',
-    pic: "/pics/big_note.png",
+    glb: '../glb/notebook.glb',
+    pic: "../pics/big_note.png",
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
     badge: 'جديد',
     badgeClass: 'pp-badge-new',
     cat: 'الدفاتر والمفكرات',
-    icon: '/pics/big_note.png',
+    icon: '../pics/big_note.png',
     bgClass: 'prod-bg-1',
     desc: 'دفتر أثر المميز هو رفيقك اليومي للأفكار، الملاحظات، والإبداع. مصمّم بعناية لتعكس هويتنا البصرية بألوانها الغنية وأنماطها الهندسية الفريدة. الغلاف مصنوع من كرتون فاخر بطبقة حماية مطفية، والصفحات من ورق أبيض ناعم مقاس ٨٠ جرام مناسب لجميع أنواع الأقلام.',
     specs: [
