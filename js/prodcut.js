@@ -24,7 +24,7 @@ const PRODUCTS = [
   {
     id: 1,
     glb: 'glb/notebook.glb',
-    pic: "pics/big_note.png",
+    pic: "/pics/big_note.png",
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
     badge: 'جديد',
@@ -45,7 +45,7 @@ const PRODUCTS = [
   {
     id: 2,
     glb: 'glb/Pen.glb',
-    pic: "pics/pen.jpeg",
+    pic: "/pics/pen.jpeg",
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
     badge: null,
@@ -64,7 +64,7 @@ const PRODUCTS = [
   {
     id: 3,
     glb: 'glb/smallnote.glb',
-    pic: "pics/small note.jpeg",
+    pic: "/pics/small note.jpeg",
     name: 'منظّم المهام اليومي',
     price: '٦٠ ₪',
     badge: 'الأكثر مبيعًا',
@@ -86,7 +86,7 @@ const PRODUCTS = [
   {
     id: 4,
     glb: 'glb/finalcelender.glb',
-    pic: "pics/taqweem.jpeg",
+    pic: "/pics/taqweem.jpeg",
     name: 'تقويم أثر الصغير',
     price: '٢٥ ₪',
     badge: null,
@@ -104,7 +104,7 @@ const PRODUCTS = [
   {
     id: 5,
     glb: 'glb/Clock.glb',
-    pic: "pics/clock.jpeg",
+    pic: "/pics/clock.jpeg",
     name: "ساعة أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
@@ -122,7 +122,7 @@ const PRODUCTS = [
   {
     id: 6,
     glb: 'glb/mug.glb',
-    pic: "pics/mug.png",
+    pic: "/pics/mug.png",
     name: "مج أثر المميز",
     price: '٣٨ ₪',
     badge: null,
@@ -140,7 +140,7 @@ const PRODUCTS = [
   {
     id: 7,
     glb: 'glb/medi.glb',
-    pic: "pics/mid.jpeg",
+    pic: "/pics/mid.jpeg",
     name: "ميدالية أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
@@ -157,7 +157,7 @@ const PRODUCTS = [
   {
     id: 8,
     glb: 'glb/bag.glb',
-    pic: "pics/bag.jpeg",
+    pic: "/pics/bag.jpeg",
     name: "حقيبة أثر المميزة",
     price: '٣٨ ₪',
     badge: null,
