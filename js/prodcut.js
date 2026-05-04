@@ -2,23 +2,19 @@
 function toggleMenu() {
   const btn = document.getElementById('hamburger');
   const menu = document.getElementById('mobile-menu');
-
   if (btn && menu) {
     btn.classList.toggle('open');
     menu.classList.toggle('open');
   }
 }
-
 function closeMenu() {
   const btn = document.getElementById('hamburger');
   const menu = document.getElementById('mobile-menu');
-
   if (btn && menu) {
     btn.classList.remove('open');
     menu.classList.remove('open');
   }
 }
-
 // المنتج
 const PRODUCTS = [
   {
@@ -52,7 +48,7 @@ const PRODUCTS = [
     cat: 'الأقلام والألوان',
     icon: 'https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/pen.jpeg',
     bgClass: 'prod-bg-2',
-    desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّم للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
+    desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّد للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
       ['عدد القطع', '+١ قطعة'],
       ['عدد الأقلام', '١ قلم'],
@@ -147,7 +143,7 @@ const PRODUCTS = [
     cat: 'الأقلام والألوان',
     icon: 'github.com/SuhaMurtaja/AtharStationary/blob/master/pics/mid.jpeg?raw=true',
     bgClass: 'prod-bg-2',
-    desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّم للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
+    desc: 'طقم أقلام فنية متكامل يضم ١٢ قلم بين جراف وماركر، مصمّد للفنانين والمبدعين الذين يبحثون عن دقة اللون وجودة الخط. الأحبار مقاومة للماء وثابتة اللون، والأطراف متنوعة بين رفيعة وسميكة لتناسب أي أسلوب إبداعي.',
     specs: [
       ['عدد القطع', '+١ قطعة'],
       ['الألوان', '١ لون '],
@@ -173,33 +169,25 @@ const PRODUCTS = [
     ]
   }
 ];
-
 let currentQty = 1;
-
 function getHomeCart() {
   return JSON.parse(localStorage.getItem("homeCart")) || [];
 }
-
 function saveHomeCart(cart) {
   localStorage.setItem("homeCart", JSON.stringify(cart));
 }
-
 const toArabic = n => n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
-
 function updateCartCount() {
   const cart = getHomeCart();
   const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
   const cartCountEl = document.getElementById('cart-count');
-
   if (cartCountEl) {
     cartCountEl.textContent = toArabic(totalQty);
   }
 }
-
 function addProductToStorage(product, qty = 1) {
   let cart = getHomeCart();
   const existing = cart.find(item => item.id === product.id);
-
   if (existing) {
     existing.qty += qty;
   } else {
@@ -211,26 +199,20 @@ function addProductToStorage(product, qty = 1) {
       qty: qty
     });
   }
-
   saveHomeCart(cart);
   updateCartCount();
 }
-
 function openPage(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
-
   currentQty = 1;
-
   const specsHTML = p.specs.map(([k, v]) =>
     `<div class="pp-spec-row">
       <span class="pp-spec-key">${k}</span>
       <span class="pp-spec-val">${v}</span>
     </div>`
   ).join('');
-
   const related = PRODUCTS.filter(x => x.id !== id);
-
   const relHTML = related.map(r =>
     `<div class="pp-rel-card" onclick="openPage(${r.id})">
       <img src="${r.icon || r.pic}" class="pp-rel-img" alt="${r.name}">
@@ -240,11 +222,11 @@ function openPage(id) {
       </div>
     </div>`
   ).join('');
-
   const badgeHTML = p.badge
     ? `<span class="pp-badge ${p.badgeClass || 'pp-badge-cat'}">${p.badge}</span>`
     : '';
 
+  // ✅ التعديل الأول: استخدام data-src بدل src لتفعيل Lazy Load
   const hasGlb = !!p.glb;
   const modelSrc = hasGlb ? p.glb : '';
 
@@ -254,24 +236,21 @@ function openPage(id) {
         <button class="pp-view-tab active" onclick="setView('3d', this)">عرض ثلاثي الأبعاد</button>
         <button class="pp-view-tab" onclick="setView('flat', this)">عرض مسطّح</button>
       </div>
-
       <div class="pp-model-wrap" id="pp-model-wrap">
         <div class="pp-model-pattern"></div>
-
         ${hasGlb ? `
           <model-viewer
             id="pp-viewer"
-            src="${modelSrc}"
+            data-src="${modelSrc}"
             alt="${p.name}"
-            auto-rotate
             camera-controls
+            interaction-prompt="none"
             shadow-intensity="1"
             exposure="0.9"
             style="background: transparent;"
           ></model-viewer>` : `
           <model-viewer id="pp-viewer" style="display: none;"></model-viewer>`
         }
-
         <div class="pp-model-placeholder ${hasGlb ? 'hidden' : ''}" id="pp-placeholder">
           <div class="placeholder-ring"></div>
           <div class="placeholder-ring-2"></div>
@@ -282,11 +261,9 @@ function openPage(id) {
           <div class="placeholder-glb-hint">GLB · GLTF READY</div>
         </div>
       </div>
-
       <div class="pp-3d-hint" id="pp-3d-hint">
         ${hasGlb ? 'اسحب لتدوير النموذج — اسكرول للتكبير' : 'ملف GLB سيُضاف قريباً لهذا المنتج'}
       </div>
-
       <div
         id="pp-flat-view"
         class="pp-flat-view ${p.bgClass}"
@@ -311,207 +288,154 @@ function openPage(id) {
         >
       </div>
     </div>
-
     <div class="pp-info">
       <div class="pp-breadcrumb">
         المتجر <span>›</span> ${p.cat} <span>›</span> ${p.name}
       </div>
-
       <div class="pp-badge-row">
         ${badgeHTML}
         <span class="pp-badge pp-badge-cat">${p.cat}</span>
       </div>
-
       <h1 class="pp-name">${p.name}</h1>
-
       <div class="pp-price-row">
         <span class="pp-price">${p.price}</span>
         <span class="pp-price-note">شامل الضريبة</span>
       </div>
-
       <p class="pp-desc">${p.desc}</p>
-
       <div class="pp-specs">
         <div class="pp-specs-title">المواصفات</div>
         ${specsHTML}
       </div>
-
       <div class="pp-qty-row">
         <span class="pp-qty-label">الكمية</span>
-
         <div class="pp-qty-ctrl">
           <button class="pp-qty-btn" onclick="changeQty(-1)">−</button>
           <div class="pp-qty-num" id="pp-qty">${toArabic(1)}</div>
           <button class="pp-qty-btn" onclick="changeQty(1)">+</button>
         </div>
       </div>
-
       <button class="pp-add-btn" id="pp-add-btn" onclick="addToCart(${p.id})">
         إضافة للسلة ✦
       </button>
     </div>
   `;
-
   document.getElementById('pp-related-grid').innerHTML = relHTML;
-
   const page = document.getElementById('product-page');
-
   if (page) {
     page.classList.add('active');
     page.scrollTo(0, 0);
   }
-
   document.body.style.overflow = 'hidden';
 }
 
-// الدالة المعدلة لحل مشكلة العرض المسطح
+// ✅ التعديل الثاني: تحميل الـ GLB فقط عند الضغط على تاب الثري دي
 function setView(mode, btn) {
   document.querySelectorAll('.pp-view-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-
   const modelWrap = document.getElementById('pp-model-wrap');
   const viewer = document.getElementById('pp-viewer');
   const placeholder = document.getElementById('pp-placeholder');
   const flatView = document.getElementById('pp-flat-view');
   const hint = document.getElementById('pp-3d-hint');
-
   if (mode === '3d') {
-    // إظهار حاوية الثري دي
+    // تحميل الـ GLB عند أول طلب فقط (Lazy Load)
+    if (viewer && viewer.dataset.src && !viewer.src) {
+      viewer.src = viewer.dataset.src;
+    }
     if (modelWrap) {
       modelWrap.style.display = 'block';
     }
-
-    // إظهار النموذج إذا موجود
     if (viewer) {
       viewer.style.display = '';
     }
-
-    // إظهار الـ placeholder فقط إذا المنتج لا يحتوي GLB
     if (placeholder && !placeholder.classList.contains('hidden')) {
       placeholder.style.display = '';
     }
-
-    // إخفاء الصورة المسطحة
     if (flatView) {
       flatView.style.display = 'none';
     }
-
-    // إظهار نص المساعدة
     if (hint) {
       hint.style.display = 'flex';
     }
-
   } else {
-    // إخفاء حاوية الثري دي كاملة، وهذا هو السطر الأهم
     if (modelWrap) {
       modelWrap.style.display = 'none';
     }
-
-    // إخفاء model-viewer
     if (viewer) {
       viewer.style.display = 'none';
     }
-
-    // إخفاء placeholder
     if (placeholder) {
       placeholder.style.display = 'none';
     }
-
-    // إظهار الصورة المسطحة
     if (flatView) {
       flatView.style.display = 'flex';
     }
-
-    // إخفاء نص المساعدة الخاص بالثري دي
     if (hint) {
       hint.style.display = 'none';
     }
   }
 }
-
 function changeQty(delta) {
   currentQty = Math.max(1, currentQty + delta);
   const qtyEl = document.getElementById('pp-qty');
-
   if (qtyEl) {
     qtyEl.textContent = toArabic(currentQty);
   }
 }
-
 function showToast() {
   const t = document.getElementById('cart-toast');
   if (!t) return;
-
   t.classList.add('show');
-
   setTimeout(() => {
     t.classList.remove('show');
   }, 2500);
 }
-
 function addToCart(id) {
   const product = PRODUCTS.find(p => p.id === id);
   if (!product) return;
-
   addProductToStorage(product, currentQty);
-
   const btn = document.getElementById('pp-add-btn');
-
   if (btn) {
     btn.textContent = '✓ تمت الإضافة!';
     btn.classList.add('added');
-
     setTimeout(() => {
       btn.textContent = 'إضافة للسلة ✦';
       btn.classList.remove('added');
     }, 2000);
   }
-
   showToast();
 }
-
 function closePage() {
   const page = document.getElementById('product-page');
-
   if (page) {
     page.classList.remove('active');
   }
-
   document.body.style.overflow = '';
 }
-
 document.querySelectorAll('.prod-card').forEach((card, i) => {
   card.style.cursor = 'pointer';
-
   card.addEventListener('click', e => {
     if (e.target.classList.contains('prod-add')) return;
     openPage(i + 1);
   });
 });
-
 document.querySelectorAll('.prod-add').forEach((btn, i) => {
   btn.addEventListener('click', e => {
     e.stopPropagation();
-
     const product = PRODUCTS[i];
     if (!product) return;
-
     addProductToStorage(product, 1);
-
     btn.textContent = '✓';
     btn.style.background = '#f2d242';
     btn.style.color = '#29164b';
-
     setTimeout(() => {
       btn.textContent = '+';
       btn.style.background = '';
       btn.style.color = '';
     }, 1500);
-
     showToast();
   });
 });
-
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
 });
