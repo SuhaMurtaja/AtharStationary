@@ -139,7 +139,7 @@ const PRODUCTS = {
       {
         id: 10,
         image: "../pics/todo_list.jpeg",
-        name: "",
+        name: "لوحة المهام",
         text: "لوحة بسيطة لمتابعة الإنجاز اليومي.",
         price: "16 ₪"
       },
