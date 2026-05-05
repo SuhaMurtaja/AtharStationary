@@ -19,7 +19,7 @@ function closeMenu() {
 const PRODUCTS = [
   {
     id: 1,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/notebook.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/notebook.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/big_note.png",
     name: 'دفتر أثر المميز',
     price: '٤٥ ₪',
@@ -40,7 +40,7 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Pen.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Pen.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/pen.jpeg",
     name: 'قلم أثر المميز',
     price: '٣٨ ₪',
@@ -59,7 +59,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/smallnote.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/smallnote.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/small%20note.jpeg",
     name: 'منظّم المهام اليومي',
     price: '٦٠ ₪',
@@ -81,7 +81,7 @@ const PRODUCTS = [
   },
   {
     id: 4,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/finalcelender.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/finalcelender.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/taqweem.jpeg",
     name: 'تقويم أثر الصغير',
     price: '٢٥ ₪',
@@ -99,7 +99,7 @@ const PRODUCTS = [
   },
   {
     id: 5,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Clock.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Clock.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/clock.jpeg",
     name: "ساعة أثر المميزة",
     price: '٣٨ ₪',
@@ -117,7 +117,7 @@ const PRODUCTS = [
   },
   {
     id: 6,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/mug.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/mug.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mug.png",
     name: "مج أثر المميز",
     price: '٣٨ ₪',
@@ -135,7 +135,7 @@ const PRODUCTS = [
   },
   {
     id: 7,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/medi.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/medi.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/mid.jpeg",
     name: "ميدالية أثر المميزة",
     price: '٣٨ ₪',
@@ -152,7 +152,7 @@ const PRODUCTS = [
   },
   {
     id: 8,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/bag.glb?v=10',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/bag.glb?v=11',
     pic: "https://raw.githubusercontent.com/SuhaMurtaja/AtharStationary/refs/heads/master/pics/bag.jpeg",
     name: "حقيبة أثر المميزة",
     price: '٣٨ ₪',
