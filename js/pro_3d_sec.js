@@ -45,7 +45,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Spacenotebook.glb?v=11',
+    glb: 'https://cdn.jsdelivr.net/gh/SuhaMurtaja/AtharStationary@master/glb/Spacenotebook.glb?v=12',
     pic: '../pics/Spacenotebook.jpeg',
     name: 'مفكرة صغيرة',
     price: '١٢ ₪',

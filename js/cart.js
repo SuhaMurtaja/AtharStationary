@@ -61,7 +61,7 @@ function renderCart() {
     return `
       <div class="cart-item">
         <div class="cart-item-image">
-          <img src="${item.pic}" alt="${item.name}" loading="lazy">
+          <img src="${item.pic}" alt="${item.name}">
         </div>
 
         <div class="cart-item-info">
@@ -123,11 +123,54 @@ function clearCart() {
   renderCart();
 }
 
+// function checkoutCart() {
+//   alert("تم استلام طلبك بنجاح ");
+
+//   localStorage.removeItem("homeCart");
+
+  
+  
+//   renderCart();
+// }
+
 function checkoutCart() {
-  alert("تم استلام طلبك بنجاح ");
+  const name=prompt("الاسم الثلاثي");
+
+  if (name===null){
+    alert("تم الغاء العملية");
+    return;
+  }
+  
+  const phone=prompt("رقم الهاتف مبدوء ب 059 /056");
+
+   if (phone===null){
+    alert("تم الغاء العملية");
+    return;
+  }
+
+
+  const address=prompt("العنوان العنوان بالتفصيل");
+
+   if (address===null){
+    alert("تم الغاء العملية");
+    return;
+  }
+
+  console.log(name);
+  console.log(phone);
+  console.log(address);
+
+  alert( "تم استلام طلبك بنجاح : "+name +"\n" +
+       "الهاتف : " +phone +"\n"+
+        "العنوان : "+ address +"\n"
+  );
+
+  alert( "سنتواصل معك قريبا");
   localStorage.removeItem("homeCart");
   renderCart();
+
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const clearBtn = document.getElementById("clear-cart-btn");
